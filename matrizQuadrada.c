@@ -137,6 +137,8 @@ void matrizAdjunta(double ***matriz, int tamanhoMatriz)
         }
     }
 
+    matrizTransposta(&matrizAdjunta, tamanhoMatriz);
+
     liberarMatriz(*matriz, tamanhoMatriz);
 
     (*matriz) = matrizAdjunta;
@@ -154,7 +156,6 @@ void inversaMatriz(double ***matriz, int tamanhoMatriz)
     double determinanteDividido = 1 / determinante;
 
     matrizAdjunta(matriz, tamanhoMatriz);
-    matrizTransposta(matriz, tamanhoMatriz);
     multiplicarMatriz(matriz, tamanhoMatriz, determinanteDividido);
 }
 
